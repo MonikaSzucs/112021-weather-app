@@ -1,36 +1,19 @@
-import './styles/App.css';
-import Header from './Components/Navbar/Header';
+import './App.css';
+import Navbar from './Components/Navbar';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './Pages'
+import About from './Pages/about'
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Info/>
-      <AddItem/>
-    </div>
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path='/' exact element={<Home/>}/>
+        <Route path='/about' exact element={<About/>}/>
+      </Routes>
+    </Router>
   );
-}
-
-function Info(){
-  const title = "this is my title";
-  const showTitle = true;
-  return (
-    <div>
-      <h1>{showTitle ? title: ""}</h1>
-      <p>Manage your stuff.</p>
-    </div>
-  )
-}
-
-function AddItem() {
-  return (
-    <div>
-      <form>
-        <label for="text-form">Type something</label>
-        <input type="text" id="text-form"/>
-      </form>
-    </div>
-  )
 }
 
 export default App;

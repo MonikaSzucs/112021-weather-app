@@ -3,5 +3,10 @@ h1{
 }
 
 .containermain{
-    background-color:red;
+    background: rgba(255, 255, 255, 0);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem calc((100vw - 1500px) / 2);
+    z-index: 10;
 }

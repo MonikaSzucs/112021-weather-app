@@ -1,9 +1,10 @@
 import React from 'react'
 import './sign-up.css';
+import styles from '../mystyle.module.css';
 
 const SignUp = () => {
     return(
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height:'90vh'}}>
+        <div className={styles.containermain}>
             <h1>Sign Up</h1>
         </div>
     )

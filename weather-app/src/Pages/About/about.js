@@ -1,9 +1,10 @@
 import React from 'react'
 import './about.css';
+import styles from '../mystyle.module.css';
 
 const About = () => {
     return(
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height:'90vh'}}>
+        <div className={styles.containermain}>
             <h1>About</h1>
         </div>
     )

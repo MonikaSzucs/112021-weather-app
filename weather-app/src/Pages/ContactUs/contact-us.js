@@ -1,9 +1,10 @@
 import React from 'react'
 import './contact-us.css';
+import styles from '../mystyle.module.css';
 
 const ContactUs = () => {
     return(
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height:'90vh'}}>
+        <div className={styles.containermain}>
             <h1>Contact Us</h1>
         </div>
     )

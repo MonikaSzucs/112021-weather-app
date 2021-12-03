@@ -1,6 +1,5 @@
 import './App.css';
 import Navbar from './Components/Navbar';
-import Container from './Components/Container'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from './Pages'
 import About from './Pages/About/about'
@@ -19,7 +18,6 @@ function App() {
         <Route path='/contact-us' exact element={<ContactUs/>}/>
         <Route path='/sign-up' exact element={<SignUp/>}/>
       </Routes>
-      <Container/>
     </Router>
   );
 }

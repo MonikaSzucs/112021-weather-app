@@ -1,12 +1,12 @@
 import React from 'react'
-import './index.css';
+import './services.css';
 
-const Home = () => {
+const Services = () => {
     return(
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height:'90vh'}}>
-            <h1>Home</h1>
+            <h1>Services</h1>
         </div>
     )
 }
 
-export default Home
+export default Services

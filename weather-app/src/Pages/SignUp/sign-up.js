@@ -1,12 +1,12 @@
 import React from 'react'
-import './index.css';
+import './sign-up.css';
 
-const Home = () => {
+const SignUp = () => {
     return(
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height:'90vh'}}>
-            <h1>Home</h1>
+            <h1>Sign Up</h1>
         </div>
     )
 }
 
-export default Home
+export default SignUp

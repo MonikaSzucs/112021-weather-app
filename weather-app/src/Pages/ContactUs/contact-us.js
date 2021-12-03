@@ -1,12 +1,12 @@
 import React from 'react'
-import './index.css';
+import './contact-us.css';
 
-const Home = () => {
+const ContactUs = () => {
     return(
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height:'90vh'}}>
-            <h1>Home</h1>
+            <h1>Contact Us</h1>
         </div>
     )
 }
 
-export default Home
+export default ContactUs

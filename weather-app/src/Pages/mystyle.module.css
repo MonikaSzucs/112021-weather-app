@@ -2,11 +2,27 @@ h1{
     font-size: 50px;
 }
 
-.containermain{
+.container{
     background: rgba(255, 255, 255, 0);
     height: 80px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0.5rem calc((100vw - 1500px) / 2);
+    flex-direction: column;
+    align-items:flex-start;
+    padding: 0.5rem calc((100vw - 1475px) / 2);
     z-index: 10;
 }
+
+.headerArea{
+    align-self: stretch;
+    text-align: center;
+    align-items: center;
+}
+
+.headerArea__item{
+    flex-shrink: 0;
+    flex-grow: 1;
+    color: red;
+}
+

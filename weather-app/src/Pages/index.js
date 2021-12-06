@@ -1,8 +1,10 @@
 import React from 'react'
 import styles from './mystyle.module.css';
 import Popup from './Popup/popup'
+import Country from '../Components/Country'
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
+import Test from '../Components/Country';
 
 const customStyles = {
   content: {
@@ -47,15 +49,12 @@ const Home = () => {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-                    <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
+                    <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Welcome to the Weather App</h2>
                     <button onClick={closeModal}>close</button>
-                    <div>I am a modal</div>
+                    <div>I see you live in</div>
                     <form>
                     <input />
                     <button>tab navigation</button>
-                    <button>stays</button>
-                    <button>inside</button>
-                    <button>the modal</button>
                     </form>
                 </Modal>
             </div>

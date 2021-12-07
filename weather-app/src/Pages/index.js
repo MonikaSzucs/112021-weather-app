@@ -5,6 +5,7 @@ import Country from '../Components/Country'
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
 import Test from '../Components/Country';
+import { StyleSheet, Text, View } from "react-native";
 
 const customStyles = {
   content: {
@@ -34,14 +35,17 @@ const Home = () => {
         setIsOpen(false);
     }
     return(
-        <div className={styles.container}>
-            <div className={styles.headerArea}>
-                <div className={styles.headerArea__item}>
-                    Home
-                </div>
+        <div className={styles.wrapper}>
+            <section className={styles.banner}>
+                <h1>Home</h1>
+            </section>
+            <div className={styles.main}> 
+                <aside className={styles.aside}>left</aside>
+                <div className={styles.container}>container</div>
+                <aside className={styles.aside}>right</aside>
             </div>
-            <div>
-                <button onClick={openModal}>Open Modal</button>
+            <div className={styles.banner}>
+                <button onClick={openModal}>Change Name or Location</button>
                 <Modal
                     isOpen={modalIsOpen}
                     onAfterOpen={afterOpenModal}

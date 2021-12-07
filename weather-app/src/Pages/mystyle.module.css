@@ -2,17 +2,40 @@
 .wrapper{
     flex: 1;
     padding: 20px;
-    background-color:red;
+    background-color:#EFE9E3;
+}
+#hero{
+    background-color: aliceblue;
+    background-image: url('../Assets/Images/weather_1.jpg');
+    background-size: cover;
+    z-index: -10;
+    height:  50vh;
+}
+
+#title{
+    position: absolute;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    top: 20%;
+    left: 10%;
+    color: white;
+    white-space: nowrap;
+}
+
+#subTitle{
+    
 }
 
 .banner{
     flex: 1;
     padding: 20px;
-    background-color: blue;
+    background-color: fff;
 }
 
 .main {
     flex-grow: 1000;
+    background-color:yellow;
 }
 
 .aside { 
@@ -31,4 +54,20 @@
 
 h1{
     font-size: 50px;
+    line-height: 1.5;
+}
+
+button{
+    border-radius: 4px;
+    background: #616F76;
+    border: 10px;
+    padding: 10px 22px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin: 20px 0px;
+
 }

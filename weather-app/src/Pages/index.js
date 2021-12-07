@@ -35,35 +35,42 @@ const Home = () => {
         setIsOpen(false);
     }
     return(
-        <div className={styles.wrapper}>
-            <section className={styles.banner}>
+        <>
+        <section id={styles.hero}>
+            <div id={styles.title}>
                 <h1>Home</h1>
-            </section>
+                <div id={styles.subTitle}>Welcome to the weather for (location)</div>
+                <div>
+                    <button onClick={openModal}>Change Name/Location</button>
+                    <Modal
+                        isOpen={modalIsOpen}
+                        onAfterOpen={afterOpenModal}
+                        onRequestClose={closeModal}
+                        style={customStyles}
+                        contentLabel="Example Modal"
+                    >
+                        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Welcome to the Weather App</h2>
+                        <button onClick={closeModal}>close</button>
+                        <div>I see you live in</div>
+                        <form>
+                        <input />
+                        <button>tab navigation</button>
+                        </form>
+                    </Modal>
+                </div>
+            </div>
+        </section>
+        <div className={styles.wrapper}>
             <div className={styles.main}> 
-                <aside className={styles.aside}>left</aside>
-                <div className={styles.container}>container</div>
-                <aside className={styles.aside}>right</aside>
+                <aside className={styles.aside}></aside>
+                <div className={styles.container}>The weather for (your location) is:</div>
+                <aside className={styles.aside}></aside>
             </div>
             <div className={styles.banner}>
-                <button onClick={openModal}>Change Name or Location</button>
-                <Modal
-                    isOpen={modalIsOpen}
-                    onAfterOpen={afterOpenModal}
-                    onRequestClose={closeModal}
-                    style={customStyles}
-                    contentLabel="Example Modal"
-                >
-                    <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Welcome to the Weather App</h2>
-                    <button onClick={closeModal}>close</button>
-                    <div>I see you live in</div>
-                    <form>
-                    <input />
-                    <button>tab navigation</button>
-                    </form>
-                </Modal>
+                test
             </div>
         </div>
-        
+        </>
     )
 }
 

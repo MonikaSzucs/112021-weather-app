@@ -1,23 +1,12 @@
 import React, { useState } from 'react'
 import styles from './mystyle.module.css';
-import Modal from 'react-modal';
+import Popup from '../Components/Popup/index';
+import Footer from '../Components/Footer/Footer';
 
 /* https://www.youtube.com/watch?v=nytKEUqzAMk */
 /* https://openweathermap.org/forecast16 */
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
-
-
-
+/* https://ipstack.com/documentation */
+/* https://ipstack.com/quickstart */
 
 const Home = () => {
     let subtitle;
@@ -41,29 +30,9 @@ const Home = () => {
         <>
         <section id={styles.hero}>
             <div id={styles.title}>
-                <h1>Home</h1>
-                <button>Find my details</button>
-                <div id={styles.subTitle}>Welcome to the weather for (location)
-                    
-                </div>
-                <div>
-                    <button onClick={openModal}>Change Name/Location</button>
-                    <Modal
-                        isOpen={modalIsOpen}
-                        onAfterOpen={afterOpenModal}
-                        onRequestClose={closeModal}
-                        style={customStyles}
-                        contentLabel="Example Modal"
-                    >
-                        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Welcome to the Weather App</h2>
-                        <button onClick={closeModal}>close</button>
-                        <div>I see you live in</div>
-                        <form>
-                        <input />
-                        <button>tab navigation</button>
-                        </form>
-                    </Modal>
-                </div>
+                <h3>Home</h3>
+                <h1>Weather for (location)</h1>
+                <Popup />
             </div>
         </section>
         <div className={styles.wrapper}>
@@ -76,6 +45,7 @@ const Home = () => {
                 test
             </div>
         </div>
+        <Footer />
         </>
     )
 }

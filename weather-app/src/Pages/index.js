@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './mystyle.module.css';
+import styles from './mystyle.module.scss';
 import Popup from '../Components/Popup/index';
 import Footer from '../Components/Footer/Footer';
 
@@ -28,24 +28,29 @@ const Home = () => {
     
     return(
         <>
-        <section id={styles.hero}>
-            <div id={styles.title}>
-                <h3>Home</h3>
-                <h1>Weather for (location)</h1>
-                <Popup />
+            <section id={styles.hero}>
+                <div id={styles.title}>
+                    <h3>Home</h3>
+                    <h1>Weather for (location)</h1>
+                    <Popup />
+                </div>
+            </section>
+            <div className={styles.wrapper}>
+                <div className={styles.main}> 
+                    <aside className={styles.aside}></aside>
+                    <div className={styles.container}>
+                        (Location):
+                        <div>
+                            Weather Displayed here
+                        </div>
+                    </div>
+                    <aside className={styles.aside}></aside>
+                </div>
+                <div className={styles.banner}>
+                    test
+                </div>
             </div>
-        </section>
-        <div className={styles.wrapper}>
-            <div className={styles.main}> 
-                <aside className={styles.aside}></aside>
-                <div className={styles.container}>(Location):</div>
-                <aside className={styles.aside}></aside>
-            </div>
-            <div className={styles.banner}>
-                test
-            </div>
-        </div>
-        <Footer />
+            <Footer />
         </>
     )
 }

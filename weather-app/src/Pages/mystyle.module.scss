@@ -1,11 +1,16 @@
 /* https://www.threehellos.com/blog/color-palette-07 */
+:root {
+    --white: #fff;
+    --beige: #EFE9E3;
+
+}
+
 .wrapper{
     flex: 1;
     padding: 20px;
-    background-color:#EFE9E3;
+    background-color:var(--beige);
 }
 #hero{
-    background-color: aliceblue;
     background-image: url('../Assets/Images/weather_1.jpg');
     background-size: cover;
     z-index: -10;
@@ -19,7 +24,7 @@
     padding: 0;
     top: 20%;
     left: 10%;
-    color: white;
+    color: var(--white);
     white-space: nowrap;
 }
 
@@ -30,7 +35,7 @@
 .banner{
     flex: 1;
     padding: 20px;
-    background-color: fff;
+    background-color: var(--white);
 }
 
 .main {
@@ -66,7 +71,7 @@ button{
     background: #616F76;
     border: 10px;
     padding: 10px 22px;
-    color: #fff;
+    color: var(--white);
     border: none;
     outline: none;
     cursor: pointer;

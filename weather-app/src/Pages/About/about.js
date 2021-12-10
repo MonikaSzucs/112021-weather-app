@@ -1,6 +1,6 @@
 import React from 'react'
 import './about.css';
-import styles from '../mystyle.module.scss';
+import styles from '../_index.module.scss';
 
 const About = () => {
     return(

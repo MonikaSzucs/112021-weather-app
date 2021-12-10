@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './mystyle.module.scss';
+import styles from './_index.module.scss';
 import Popup from '../Components/Popup/index';
 import Footer from '../Components/Footer/Footer';
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import './contact-us.css';
-import styles from '../index.module.scss';
+import styles from '../_index.module.scss';
 
 const ContactUs = () => {
     return(
-        <div className={styles.containermain}>
+        <div className="">
             <h1>Contact Us</h1>
         </div>
     )

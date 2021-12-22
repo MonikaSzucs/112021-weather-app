@@ -9,33 +9,16 @@ import Footer from '../Components/Footer/Footer';
 /* https://ipstack.com/quickstart */
 
 const Home = () => {
-    let subtitle;
-    const [modalIsOpen, setIsOpen] = React.useState(true);
-
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
-
-    
     return(
-        <>
-            <section className="wrapper">
+        <div className='wrapper'>
+            <section>
                 <div className="hero">
                     <h3>Home</h3>
                     <h1>Weather for (location)</h1>
                     <Popup />
                 </div>
             </section>
-            <div className="wrapper">
+            <div>
                 <div className={styles.main}> 
                     <aside className={styles.aside}></aside>
                     <div className="container">
@@ -51,7 +34,7 @@ const Home = () => {
                 </div>
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

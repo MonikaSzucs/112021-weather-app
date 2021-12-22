@@ -15,6 +15,7 @@ const customStyles = {
 
 
 const Popup = () => {
+    // Popup
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(true);
 
@@ -24,13 +25,28 @@ const Popup = () => {
 
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
+        subtitle.style.color = 'blue';
     }
 
     function closeModal() {
         setIsOpen(false);
     }
 
+    // Array of objects containing our cities data
+    let cities = [
+        { label: "Toronto", value: "Toronto" },
+        { label: "Montreal", value: "Montreal" },
+        { label: "Vancouver", value: "Vancouver" }
+    ]
+
+    // Using state to keep track of what the selected city is
+    let [city, setCity] = useState("⬇️ Select a city ⬇️")
+
+    // Using this function to update the state of city
+    // whenever a new option is selected from the dropdown
+    let handleCityChange = (e) => {
+        setCity(e.target.value)
+    }
     
     return(
         <>
@@ -44,12 +60,28 @@ const Popup = () => {
                 contentLabel="Example Modal"
             >
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Welcome to the Weather App</h2>
-                <button onClick={closeModal}>close</button>
-                <div>I see you live in</div>
+                
+                {/* Displaying the value of fruit */}
+                <div>I see you live in {city}</div>
+                
+                {/* Creating our dropdown and passing it the handleFruitChange 
+                so that every time a new choice is selected, our fruit state 
+                updates and renders an emoji of the fruit.
+                */}
+                <div>Want to change your location? </div>
+                <select onChange={handleCityChange}> 
+                    {/* Creating the default / starting option for our dropdown.*/}
+                    <option value="⬇️ Select a city ⬇️"> -- Select a City -- </option>
+                    {/* Mapping through each fruit object in our fruits array
+                    and returning an option element with the appropriate attributes / values.
+                    */}
+                    {cities.map((city) => <option value={city.value}>{city.label}</option>)}
+                </select>
                 <form>
-                <input />
-                <button>tab navigation</button>
+                    <input />
+                    <button>tab navigation</button>
                 </form>
+                <button onClick={closeModal}>close</button>
             </Modal>
         </>
     )

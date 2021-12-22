@@ -1,14 +1,15 @@
 import React from "react";
-import {Nav, NavLink, Bars, NavMenu, NavBtnLink} from './NavbarElements'
+import {NavLink, Bars, NavMenu, NavBtnLink} from './NavbarElements'
 import logo from '../../Assets/Images/logo.png'
+import '../../scss/style.scss';
 
 const Navbar = () => {
         return(
             <>
-                <Nav>
-                    <NavLink to="/">
-                        <img src={logo} alt="logo" style={{height: '30px'}}/>
-                    </NavLink>
+                <div className="nav"> 
+                    <div className="logo" to="/" >
+                        <img src={logo} alt="logo"/>
+                    </div>
                     <Bars/>
                     <NavMenu>
                         <NavLink to="/about" activeStyle>
@@ -25,7 +26,7 @@ const Navbar = () => {
                         </NavLink>
                         <NavBtnLink to="/signin">Sign In</NavBtnLink>
                     </NavMenu>
-                </Nav>
+                </div>
             </>
         )
 };

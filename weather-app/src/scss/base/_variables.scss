@@ -33,7 +33,7 @@ $base: (
     'secondary-font-serif': unquote("'Playfair Display', Times, Baskerville, Georgia, serif"),
     'btn-font-sans-serif': unquote("'Hammersmith One', 'Helvetica Neue', Helvetica, sans-serif"),
     'base-text-color': $darkgrey,
-    'base-background-color': red,
+    'base-background-color': $lightgrey,
     'base-link-color':$bluegrey,
     'base-font-size': 12px,
     'base-line-height': 1.2,

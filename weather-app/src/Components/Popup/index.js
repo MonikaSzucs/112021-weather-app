@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import styles from './index.css';
 import Modal from 'react-modal';
+import styles from '../../scss/style.scss';
 
 const customStyles = {
   content: {
@@ -10,6 +10,7 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    backgroundColor: '$lightgrey',
   },
 };
 
@@ -63,25 +64,24 @@ const Popup = () => {
                 
                 {/* Displaying the value of fruit */}
                 <div>I see you live in {city}</div>
-                
-                {/* Creating our dropdown and passing it the handleFruitChange 
-                so that every time a new choice is selected, our fruit state 
-                updates and renders an emoji of the fruit.
-                */}
-                <div>Want to change your location? </div>
-                <select onChange={handleCityChange}> 
-                    {/* Creating the default / starting option for our dropdown.*/}
-                    <option value="⬇️ Select a city ⬇️"> -- Select a City -- </option>
-                    {/* Mapping through each fruit object in our fruits array
-                    and returning an option element with the appropriate attributes / values.
+                <div>
+                    {/* Creating our dropdown and passing it the handleFruitChange 
+                    so that every time a new choice is selected, our fruit state 
+                    updates and renders an emoji of the fruit.
                     */}
-                    {cities.map((city) => <option value={city.value}>{city.label}</option>)}
-                </select>
-                <form>
-                    <input />
-                    <button>tab navigation</button>
-                </form>
-                <button onClick={closeModal}>close</button>
+                    <div>Change Location (Optional)</div>
+                    <select onChange={handleCityChange}> 
+                        {/* Creating the default / starting option for our dropdown.*/}
+                        <option value="⬇️ Select a city ⬇️"> -- Select a City -- </option>
+                        {/* Mapping through each fruit object in our fruits array
+                        and returning an option element with the appropriate attributes / values.
+                        */}
+                        {cities.map((city) => <option value={city.value}>{city.label}</option>)}
+                    </select>
+                </div>
+                <div>
+                    <button onClick={closeModal}>Continue</button>
+                </div>
             </Modal>
         </>
     )

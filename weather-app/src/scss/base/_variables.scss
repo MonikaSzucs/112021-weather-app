@@ -1,8 +1,15 @@
+/* https://www.threehellos.com/blog/color-palette-07 */
+
 // Colors
 $white: #fff;
+$lightgrey: #FFFCF9;
+$grey: #B3B3B3;
 $beige: #EFE9E3;
-$yellow: yellow;
-$green: green;
+$peach: #E6D6C7;
+$beiggrey: #9B9483;
+$darkbeige: #C3A489;
+$darkgrey: #4E5255;
+$bluegrey: #616F76;
 
 // Headers
 $headings: (
@@ -25,9 +32,9 @@ $base: (
     'base-font-serif': unquote("'Times New Roman', Times, Baskerville, Georgia, serif"),
     'secondary-font-serif': unquote("'Playfair Display', Times, Baskerville, Georgia, serif"),
     'btn-font-sans-serif': unquote("'Hammersmith One', 'Helvetica Neue', Helvetica, sans-serif"),
-    'base-text-color': #4E5255,
-    'base-background-color': #FFFCF9,
-    'base-link-color':#616F76,
+    'base-text-color': $darkgrey,
+    'base-background-color': red,
+    'base-link-color':$bluegrey,
     'base-font-size': 12px,
     'base-line-height': 1.2,
     'base-font-family': unquote("Arial, 'Helvetica Neue', Helvetica, sans-serif"),
@@ -38,15 +45,15 @@ $base: (
 // Forms
 $forms: (
     'form-element-padding': unquote("0.4em 0.7em"),
-    'form-element-border-color': #616F76,
-    'form-element-focus-border-color': #9B9483,
-    'placeholder-color': #B3B3B3
+    'form-element-border-color': $beiggrey,
+    'form-element-focus-border-color': $beiggrey,
+    'placeholder-color': $grey
 );
 
 // Button
 $button: (
-    'btn-color': #C3A489,
-    'btn-color-border': #C3A489,
+    'btn-color': $darkbeige,
+    'btn-color-border': $darkbeige,
     'btn-font-size':12px,
     'btn-line-height': 10px,
     'btn-width': 100px,
@@ -55,8 +62,8 @@ $button: (
 
 // Navigation
 $nav: (
-  'color-nav': #EFE9E3,
-  'color-active': #616F76
+  'color-nav': $beige,
+  'color-active': $bluegrey
 );
 
 // Breaking points for include media

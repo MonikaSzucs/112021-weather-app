@@ -28,17 +28,17 @@ const Home = () => {
     
     return(
         <>
-            <section >
-                <div >
+            <section className="wrapper">
+                <div className="hero">
                     <h3>Home</h3>
                     <h1>Weather for (location)</h1>
                     <Popup />
                 </div>
             </section>
-            <div className={styles.wrapper}>
+            <div className="wrapper">
                 <div className={styles.main}> 
                     <aside className={styles.aside}></aside>
-                    <div className={styles.container}>
+                    <div className="container">
                         (Location):
                         <div>
                             Weather Displayed here

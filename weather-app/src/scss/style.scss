@@ -13,7 +13,20 @@
 
 @import 'general/main';
 
+body{
+    background-color: base-background-color;
+}
 
+*{
+    font-family: 'Sora', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 100px;
+}
 
 //Font Size
 $h1: 18px;
@@ -27,7 +40,7 @@ $subfooterTextSize: 11px;
     padding: 20px;
     background-color:var($beige);
 }
-#hero{
+.hero{
     background-image: url('../Assets/Images/weather_1.jpg');
     background-size: cover;
     z-index: -10;
@@ -52,12 +65,12 @@ $subfooterTextSize: 11px;
 .banner{
     flex: 1;
     padding: 20px;
-    background-color: var($white);
+    background-color: base-background-color;
 }
 
 .main {
     flex-grow: 1000;
-    background-color:var($yellow);
+    background-color:base-background-color;
 }
 
 .aside { 
@@ -69,7 +82,7 @@ $subfooterTextSize: 11px;
 .container{
     flex-grow: 1000;
     display:inline-block;
-    background-color:var($green);
+    background-color:base-background-color;
     height: 100%;
     min-width:70%;
 }

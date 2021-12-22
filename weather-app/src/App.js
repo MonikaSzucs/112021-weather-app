@@ -7,7 +7,8 @@ import About from './Pages/About/about';
 import Services from './Pages/Services/services';
 import ContactUs from './Pages/ContactUs/contact-us';
 import SignUp from './Pages/SignUp/sign-up';
-import axios from 'axios'
+import axios from 'axios';
+import './scss/style.scss';
 
 const API_endpoint = `http://api.ipstack.com/check?`;
 const API_key = `772ad85b6130cb136c8b5f0b8f62cb32`;

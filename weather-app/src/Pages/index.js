@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './_index.module.scss';
+import styles from '../scss/style.scss';
 import Popup from '../Components/Popup/index';
 import Footer from '../Components/Footer/Footer';
 
@@ -28,8 +28,8 @@ const Home = () => {
     
     return(
         <>
-            <section id={styles.hero}>
-                <div id={styles.title}>
+            <section >
+                <div >
                     <h3>Home</h3>
                     <h1>Weather for (location)</h1>
                     <Popup />

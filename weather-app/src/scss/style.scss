@@ -1,10 +1,19 @@
 /* https://www.threehellos.com/blog/color-palette-07 */
 /* https://github.com/justcoded/examples-scss-bem-code/blob/master/index.html */
-// Colors
-$white: #fff;
-$beige: #EFE9E3;
-$yellow: yellow;
-$green: green;
+
+@import 'base/main';
+
+@import 'header/header';
+
+@import 'footer/footer';
+
+@import 'navigation/navigation';
+
+@import 'section/main';
+
+@import 'general/main';
+
+
 
 //Font Size
 $h1: 18px;

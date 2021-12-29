@@ -1,0 +1,11 @@
+button {
+    padding: 10px 20px;
+    margin: 20px 0px;
+    background-color: var(--color-primary-button);
+    flex-direction: right;
+
+    &:hover {
+        background-color: var(--color-secondary-button);
+        color: var(--color-text-secondary);
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal';
 import styles from '../../scss/style.scss';
+import IPStack from '../../APIs/IPStack/index';
 
 const customStyles = {
   content: {
@@ -26,7 +27,7 @@ const Popup = () => {
 
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
-        subtitle.style.color = 'blue';
+        subtitle.style.color = '--gradient-text';
     }
 
     function closeModal() {
@@ -41,7 +42,7 @@ const Popup = () => {
     ]
 
     // Using state to keep track of what the selected city is
-    let [city, setCity] = useState("⬇️ Select a city ⬇️")
+    let [city, setCity] = useState(<IPStack/>)
 
     // Using this function to update the state of city
     // whenever a new option is selected from the dropdown
@@ -50,7 +51,7 @@ const Popup = () => {
     }
     
     return(
-        <>
+        <div>
             <button onClick={openModal}>Change Name/Location</button>
             <Modal
                 isOpen={modalIsOpen}
@@ -59,31 +60,32 @@ const Popup = () => {
                 style={customStyles}
                 ariaHideApp={false}
                 contentLabel="Example Modal"
-            >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Welcome to the Weather App</h2>
-                
-                {/* Displaying the value of fruit */}
-                <div>I see you live in {city}</div>
-                <div>
-                    {/* Creating our dropdown and passing it the handleFruitChange 
-                    so that every time a new choice is selected, our fruit state 
-                    updates and renders an emoji of the fruit.
-                    */}
-                    <div>Change Location (Optional)</div>
-                    <select onChange={handleCityChange}> 
-                        {/* Creating the default / starting option for our dropdown.*/}
-                        <option value="⬇️ Select a city ⬇️"> -- Select a City -- </option>
-                        {/* Mapping through each fruit object in our fruits array
-                        and returning an option element with the appropriate attributes / values.
+                className="modal in"
+            >   
+                    <h2 className="gradient__text" ref={(_subtitle) => (subtitle = _subtitle)}>Welcome to the Weather App</h2>
+                    
+                    {/* Displaying the value of fruit */}
+                    <p>I see you live in {city}</p>
+                    <div>
+                        {/* Creating our dropdown and passing it the handleFruitChange 
+                        so that every time a new choice is selected, our fruit state 
+                        updates and renders an emoji of the fruit.
                         */}
-                        {cities.map((city) => <option value={city.value}>{city.label}</option>)}
-                    </select>
-                </div>
-                <div>
-                    <button onClick={closeModal}>Continue</button>
-                </div>
+                        <div className="popup__title-location">Change Location (Optional)</div>
+                        <select onChange={handleCityChange}> 
+                            {/* Creating the default / starting option for our dropdown.*/}
+                            <option value="⬇️ Select a city ⬇️"> -- Select a City -- </option>
+                            {/* Mapping through each fruit object in our fruits array
+                            and returning an option element with the appropriate attributes / values.
+                            */}
+                            {cities.map((city) => <option value={city.value}>{city.label}</option>)}
+                        </select>
+                    </div>
+                    <div>
+                        <button onClick={closeModal}>Continue</button>
+                    </div>
             </Modal>
-        </>
+        </div>
     )
 }
 

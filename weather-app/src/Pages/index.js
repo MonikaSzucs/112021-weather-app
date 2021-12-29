@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import styles from '../scss/style.scss';
 import Popup from '../Components/Popup/index';
 import Footer from '../Components/Footer/Footer';
+//import IPStack from '../APIs/IPStack/index';
 
 /* https://www.youtube.com/watch?v=nytKEUqzAMk */
 /* https://openweathermap.org/forecast16 */
 /* https://ipstack.com/documentation */
 /* https://ipstack.com/quickstart */
+
+//let [city, setCity] = useState(<IPStack/>);
 
 const Home = () => {
     return(

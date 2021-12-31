@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, createContext } from 'react'
 import Modal from 'react-modal';
 import styles from '../../scss/style.scss';
 import IPStack from '../../APIs/IPStack/index';
+import Home from '../../Pages/index';
 
 const customStyles = {
   content: {
@@ -47,9 +48,12 @@ const Popup = () => {
     // Using this function to update the state of city
     // whenever a new option is selected from the dropdown
     let handleCityChange = (e) => {
-        setCity(e.target.value)
+        setCity(e.target.value);
+        console.log(e.target.value)
     }
     
+    const data = ("Vancouver");
+
     return(
         <div>
             <button onClick={openModal}>Change Name/Location</button>

@@ -3,6 +3,7 @@ import styles from '../scss/style.scss';
 import Popup from '../Components/Popup/index';
 import Footer from '../Components/Footer/Footer';
 //import IPStack from '../APIs/IPStack/index';
+import IPStack from '../APIs/IPStack/index';
 
 /* https://www.youtube.com/watch?v=nytKEUqzAMk */
 /* https://openweathermap.org/forecast16 */
@@ -11,13 +12,16 @@ import Footer from '../Components/Footer/Footer';
 
 //let [city, setCity] = useState(<IPStack/>);
 
-const Home = () => {
+const Home = (props) => {
+
+    console.log(props)
+
     return(
         <div className='wrapper'>
             <section>
                 <div className="hero">
                     <h3>Home</h3>
-                    <h1>Weather for (location)</h1>
+                    <h1>Weather for (location) {props.data}</h1>
                     <Popup />
                 </div>
             </section>
@@ -25,7 +29,7 @@ const Home = () => {
                 <div className={styles.main}> 
                     <aside className={styles.aside}></aside>
                     <div className="container">
-                        (Location):
+                        
                         <div>
                             Weather Displayed here
                         </div>

@@ -16,21 +16,19 @@ const Home = (props) => {
 
     console.log(props)
     var Item = ""
-
-    useEffect(() => {
-        var Item = localStorage.getItem('city');
-        console.log(Item)
-    })
+    const [cart, setCart] = useState([]);
 
     
+    const data = localStorage.getItem('city'); 
+    console.log(data)
 
     return(
         <div className='wrapper'>
             <section>
                 <div className="hero">
                     <h3>Home</h3>
-                    <h1>Weather for {Item}</h1>
                     <Popup />
+                    <h1>Weather for {data}</h1>
                 </div>
             </section>
             <div>

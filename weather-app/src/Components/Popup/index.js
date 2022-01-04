@@ -39,8 +39,9 @@ const Popup = () => {
 
     function closeModal(event) {
         setIsOpen(false);
-        event.preventDefault()
+        //event.preventDefault()
         window.localStorage.setItem('city', `${city}`)
+        
         //alert(`You entered: ${city}`)
     }
 
@@ -53,7 +54,6 @@ const Popup = () => {
 
     // Using state to keep track of what the selected city is
     let [city, setCity] = useState("")
-    console.log(setCity)
 
     // Using this function to update the state of city
     // whenever a new option is selected from the dropdown

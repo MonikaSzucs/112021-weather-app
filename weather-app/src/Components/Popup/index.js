@@ -1,4 +1,5 @@
-import React, { useState, createContext } from 'react'
+import React, { useState, useEffect, createContext, Component } from 'react';
+import { render } from 'react-dom';
 import Modal from 'react-modal';
 import styles from '../../scss/style.scss';
 import IPStack from '../../APIs/IPStack/index';
@@ -18,6 +19,11 @@ const customStyles = {
 
 
 const Popup = () => {
+
+    useEffect(() => {
+        window.localStorage.clear()
+    }, [])
+
     // Popup
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(true);
@@ -31,8 +37,11 @@ const Popup = () => {
         subtitle.style.color = '--gradient-text';
     }
 
-    function closeModal() {
+    function closeModal(event) {
         setIsOpen(false);
+        event.preventDefault()
+        window.localStorage.setItem('city', `${city}`)
+        //alert(`You entered: ${city}`)
     }
 
     // Array of objects containing our cities data
@@ -43,7 +52,8 @@ const Popup = () => {
     ]
 
     // Using state to keep track of what the selected city is
-    let [city, setCity] = useState(<IPStack/>)
+    let [city, setCity] = useState("")
+    console.log(setCity)
 
     // Using this function to update the state of city
     // whenever a new option is selected from the dropdown
@@ -55,12 +65,11 @@ const Popup = () => {
     const data = ("Vancouver");
 
     return(
-        <div>
+        <form>
             <button onClick={openModal}>Change Name/Location</button>
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
                 style={customStyles}
                 ariaHideApp={false}
                 contentLabel="Example Modal"
@@ -75,21 +84,21 @@ const Popup = () => {
                         so that every time a new choice is selected, our fruit state 
                         updates and renders an emoji of the fruit.
                         */}
-                        <div className="popup__title-location">Change Location (Optional)</div>
+                        <label htmlFor="locationInput" className="popup__title-location">Change Location (Optional)</label>
                         <select onChange={handleCityChange}> 
                             {/* Creating the default / starting option for our dropdown.*/}
                             <option value="⬇️ Select a city ⬇️"> -- Select a City -- </option>
                             {/* Mapping through each fruit object in our fruits array
                             and returning an option element with the appropriate attributes / values.
                             */}
-                            {cities.map((city) => <option value={city.value}>{city.label}</option>)}
+                            {cities.map((city) => <option id="city" value={city.value}>{city.label}</option>)}
                         </select>
                     </div>
                     <div>
-                        <button onClick={closeModal}>Continue</button>
+                        <button type="submit" onClick={closeModal}>Continue</button>
                     </div>
             </Modal>
-        </div>
+        </form>
     )
 }
 

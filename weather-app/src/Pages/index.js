@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '../scss/style.scss';
 import Popup from '../Components/Popup/index';
 import Footer from '../Components/Footer/Footer';
@@ -15,13 +15,21 @@ import IPStack from '../APIs/IPStack/index';
 const Home = (props) => {
 
     console.log(props)
+    var Item = ""
+
+    useEffect(() => {
+        var Item = localStorage.getItem('city');
+        console.log(Item)
+    })
+
+    
 
     return(
         <div className='wrapper'>
             <section>
                 <div className="hero">
                     <h3>Home</h3>
-                    <h1>Weather for (location) {props.data}</h1>
+                    <h1>Weather for {Item}</h1>
                     <Popup />
                 </div>
             </section>

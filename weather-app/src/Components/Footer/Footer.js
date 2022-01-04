@@ -9,12 +9,10 @@ const Footer = () => {
                 <div className={styles.row}>Change Location:</div>
                 <div className={styles.row}>
                     About <br/>
-                    Services <br/> 
-                    Contact Us
+                    Services
                 </div>
                 <div className={styles.row}>
-                    Sign Up <br/>
-                    Sign In
+                    Contact Us
                 </div>
                 </div>
                 <div className={styles.submain}>© Monika Szucs 2021 mszucs.work@outlook.com</div>

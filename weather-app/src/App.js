@@ -6,7 +6,6 @@ import Home from './Pages';
 import About from './Pages/About/about';
 import Services from './Pages/Services/services';
 import ContactUs from './Pages/ContactUs/contact-us';
-import SignUp from './Pages/SignUp/sign-up';
 import './scss/style.scss';
 
 
@@ -19,7 +18,6 @@ function App() {
         <Route path='/about' exact element={<About/>}/>
         <Route path='/services' exact element={<Services/>}/>
         <Route path='/contact-us' exact element={<ContactUs/>}/>
-        <Route path='/sign-up' exact element={<SignUp/>}/>
       </Routes>
     </Router>
     

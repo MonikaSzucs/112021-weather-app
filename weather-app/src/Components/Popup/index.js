@@ -41,7 +41,7 @@ const Popup = () => {
         setIsOpen(false);
         //event.preventDefault()
         window.localStorage.setItem('city', `${city}`)
-        
+        //window.location.reload(True);
         //alert(`You entered: ${city}`)
     }
 

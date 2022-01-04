@@ -13,14 +13,18 @@ import IPStack from '../APIs/IPStack/index';
 //let [city, setCity] = useState(<IPStack/>);
 
 const Home = (props) => {
-
+    console.log("HOME")
     console.log(props)
     var Item = ""
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(
+        () => window.localStorage.getItem('city') || '',
+    );
 
     
     const data = localStorage.getItem('city'); 
-    console.log(data)
+    //console.log(props.localstorage.city)
+
+    //const handleChange = event => setName(event.target.value)
 
     return(
         <div className='wrapper'>

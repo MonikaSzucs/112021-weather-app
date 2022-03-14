@@ -8,3 +8,7 @@ Button {
     color: #fff;
     padding: 5px 10px;
 }
+
+.helpContent{
+    padding: 10px;
+}

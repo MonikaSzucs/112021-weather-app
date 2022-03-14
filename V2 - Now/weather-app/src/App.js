@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Button } from 'semantic-ui-react';
+import './App.css';
+
 
 function App() {
   const [data,setData] = useState({})
+  //const [data2,setData2] = useState('')
   const [location, setLocation] = useState('')
   //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
   const apiKey = 'bfb6c6eeff272ecc79219995f74a1595'
@@ -12,27 +16,34 @@ function App() {
 
   const searchLocation = (event) => {
     if(event.key === 'Enter') {
-      axios.get(url).then((response) => {
-        setData(response.data)
+      axios.get(url)
+        .then((response) => {setData(response.data)
         console.log(response.data)
+        .catch(error => {
+          alert(error)
+        });
       })
       setLocation('')
     }
   }
 
+  const [show, setShow] = useState(false);
+
   return (
     <div className="app">
-      <div className="search">
-        <input
-          value={location}
-          onChange={event => setLocation(event.target.value)}
-          placeholder='Enter Location'
-          onKeyPress={searchLocation}
-          type="text"
-        />
-      </div>
       <div className="container">
         <div className="top">
+        <Button onClick={() => setShow(prev => !prev)}>Click</Button>
+        {show && <div>Welcome to the app. Start Searching for locations!</div>}
+        <div className="search">
+          <input
+            value={location}
+            onChange={event => setLocation(event.target.value)}
+            placeholder='Enter Location'
+            onKeyPress={searchLocation}
+            type="text"
+          />
+        </div>
           <div className="location">
             <p>{data.name}</p>
           </div>
@@ -42,6 +53,7 @@ function App() {
           </div>
           <div className="description">
             {data.weather ? <p>{data.weather[0].main}</p> : null}
+            
           </div>
         </div>
         {data.name != undefined && 

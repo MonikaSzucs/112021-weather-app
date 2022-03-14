@@ -33,8 +33,8 @@ function App() {
     <div className="app">
       <div className="container">
         <div className="top">
-        <Button onClick={() => setShow(prev => !prev)}>Click</Button>
-        {show && <div>Welcome to the app. Start Searching for locations!</div>}
+        <Button onClick={() => setShow(prev => !prev)}>Click Here to get help!</Button>
+        {show && <div>Welcome to the app. Start Searching for weather locations in the input "Enter Location". Enter a City name</div>}
         <div className="search">
           <input
             value={location}

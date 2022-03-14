@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import styles from '../../scss/style.scss';
 import IPStack from '../../APIs/IPStack/index';
 import Home from '../../Pages/index';
+import axios from "axios";
 
 const customStyles = {
   content: {
@@ -17,6 +18,8 @@ const customStyles = {
   },
 };
 
+
+const baseURL = "https://api.freegeoip.app/json/"
 
 const Popup = () => {
 
@@ -64,6 +67,7 @@ const Popup = () => {
     
     const data = ("Vancouver");
 
+    
     return(
         <form>
             <button onClick={openModal}>Change Name/Location</button>
